@@ -14,12 +14,19 @@
         .text-gradient {
             background: linear-gradient(to right, #00bcd4, #2196f3); /* Adjust color values as needed */
             -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             color: transparent;
             display: inline-block; /* This is important to clip the gradient properly */
         }
         .font{
             font-family: "Mulish", sans-serif;
 
+        }
+        .bg{
+            background-color: black;
+        }
+        .custom-margin {
+        margin-inline-end: 22rem;
         }
     </style>
 </head>
@@ -38,10 +45,10 @@
                 <div class="tooltip lg:tooltip tooltip-bottom" data-tip="hello">
                     <button class="btn rounded-full"><i class="fa-solid fa-pencil"></i></button>
                   </div>
-                <div class="tooltip lg:tooltip tooltip-bottom" data-tip="hello">
+                <div class="tooltip lg:tooltip tooltip-bottom" data-tip="edit">
                     <button class="btn rounded-full"><i class="fa-solid fa-user-plus"></i></button>
                   </div>
-                <div class="tooltip lg:tooltip tooltip-bottom" data-tip="hello">
+                <div class="tooltip lg:tooltip tooltip-bottom" data-tip="add">
                     <button class="btn rounded-full"><i class="fa-regular fa-flag"></i></button>
                   </div>
             </div>
@@ -59,16 +66,35 @@
     <!-- header navbar end -->
     <!-- hero area start -->
 
-    <div class="hero  bg-[#12132D] container mx-auto rounded-2xl">
-        <div class="hero-content flex-col lg:flex-row-reverse">
-          <img src="https://daisyui.com/images/stock/photo-1635805737707-575885ab0820.jpg" class="max-w-sm rounded-lg shadow-2xl" />
-          <div>
-            <h1 class="text-6xl font-bold">Welcome to the <br> <span class="text-gradient">SaJib</span> Forum</h1>
-            <p class="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-            <button class="btn btn-primary">Get Started</button>
-          </div>
+    <div class="hero bg bg-cover h-[500px] md:h-[80vh] mt-[50px] container mx-auto rounded-2xl" style="background-image: url('./images/bgbanner.png');">
+        <div class="hero-content items-center flex-col lg:flex-row-reverse justify-between">
+            <div class="h-[70px] md:h-[288px] bg-white p-30 md:p-11 me-[450px] md:me-[0px] rounded-lg">
+                <div class="flex text-[#12132DCC]">
+                    <p>Registered Users</p>
+                    <p class="ms-2">01</p>
+                </div>
+                <div class="flex text-[#12132DCC]">
+                    <p>Registered Users</p>
+                    <p class="ms-2">02</p>
+                </div>
+                <div class="flex text-[#12132DCC]">
+                    <p>Registered Users</p>
+                    <p class="ms-2">03</p>
+                </div>
+            </div>
+            <div class="custom-margin">
+                <h1 class="md:text-6xl text-xl font-bold text-white">Welcome to the <br> <span class="text-gradient">SaJib</span> Forum</h1>
+                <p class="py-6 text-white">Share your favorite opinion and win and wp <br> forum coffee mug!</p>
+                <div>
+                    <label class="input flex items-center w-[250px] border-0">
+                        <input type="text" class="grow" placeholder="Search here anything" />
+                        <button class="btn bg-[#797DFC] text-white rounded-lg">Search</button>
+                      </label>
+                </div>
+            </div>
         </div>
-      </div>
+    </div>
+    
     <!-- hero area end -->
     <script src="./index.js"></script>
 </body>
