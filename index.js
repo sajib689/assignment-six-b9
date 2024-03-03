@@ -68,7 +68,7 @@ const loadDiscussData = (category = '') => {
                         </div>
 
                         <div class="card-actions justify-end">
-                        <button onClick="handleGetPostData('${post?.title}', ${post?.view_count})" class="btn bg-[#10B981] text-white rounded-full"><i class="fa-regular fa-envelope-open"></i></button>
+                        <button onClick="handleGetPostData('${post?.title.replace(/'/g, '')}', ${post?.view_count})" class="btn bg-[#10B981] text-white rounded-full"><i class="fa-regular fa-envelope-open"></i></button>
                       </div>
                       </div>
                     </div>
@@ -80,7 +80,12 @@ const loadDiscussData = (category = '') => {
         
         
     })
-    toggleLoadingSpinner(false)
+    .catch(error => {
+      console.error('Error fetching data:', error);
+    })
+    .finally(() => {
+      toggleLoadingSpinner(false);
+    });
 }
 let count = 0
 const handleGetPostData = (title, view) => {
