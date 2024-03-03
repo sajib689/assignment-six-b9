@@ -23,7 +23,7 @@ const loadDiscussData = (category = '') => {
             // console.log(post)
            
             const div = document.createElement('div')
-            div.classList.add('mt-5','card', 'card-side', 'bg-base-100', 'shadow-xl');
+            div.classList.add('mt-5','bg-[#F3F3F5]','card', 'card-side', 'bg-base-100', 'shadow-xl');
             div.innerHTML = `
             
             <div>
@@ -96,7 +96,7 @@ const handleGetPostData = (title, view) => {
   count++
   const counter = document.getElementById('count-message')
   counter.innerText = `${count}`
-  div.classList.add('flex','justify-center','items-center')
+  div.classList.add('flex','mb-3','bg-white','p-3', 'rounded-lg','justify-center','items-center')
   div.innerHTML = `
     <h1 class="text-[15px] font-[800] md:me-28">${title}</h1>
     <div class=' flex justify-between'>
