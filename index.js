@@ -124,24 +124,24 @@ const loadLatestData = () => {
 const displayLatestData= (news) => {
   const newsContainer = document.getElementById('newsContainer')
   news.map(newsItem => {
-    // console.log(newsItem)
+    console.log(newsItem)
     const div = document.createElement('div')
     div.classList.add('card', 'card-compact', 'w-96', 'bg-base-100', 'shadow-xl')
     div.innerHTML = `
     <figure><img src="${newsItem.cover_image}" alt="Shoes" /></figure>
           <div class="card-body">
-          <p class='text-[#12132D99]'><i class="fa-regular fa-calendar me-1"></i>${newsItem.author.posted_date}</p>
+          <p class='text-[#12132D99]'><i class="fa-regular fa-calendar me-1"></i>${newsItem?.author?.posted_date || 'No publish date' }</p>
             <h2 class="card-title text-[#12132D]">${newsItem.title}</h2>
             <p>${newsItem.description}</p>
             <div class="card-actions flex justify-start">
             <div class="avatar">
             <div class="rounded-full w-12">
-              <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+              <img src="${newsItem?.profile_image}" />
             </div>
           </div>
           <div>
             <p class='font-bold'>${newsItem.author.name}</p>
-            <p>${newsItem.author?.designation || 'unknown'}</p>
+            <p>${newsItem.author?.designation || 'Unknown'}</p>
           </div>
             </div>
           </div>
