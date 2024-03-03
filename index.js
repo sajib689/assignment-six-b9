@@ -1,7 +1,7 @@
 
 
 const loadDiscussData = () => {
-    fetch('https://openapi.programming-hero.com/api/retro-forum/posts')
+    fetch(`https://openapi.programming-hero.com/api/retro-forum/posts`)
     .then(res => res.json())
     .then((data) => {
         data.posts.map(post => {
@@ -54,15 +54,34 @@ const loadDiscussData = () => {
                         </div>
 
                         <div class="card-actions justify-end">
-                        <button class="btn bg-[#10B981] text-white rounded-full"><i class="fa-regular fa-envelope-open"></i></button>
+                        <button onClick="handleGetPostData('${post?.title}', ${post?.view_count})" class="btn bg-[#10B981] text-white rounded-full"><i class="fa-regular fa-envelope-open"></i></button>
                       </div>
                       </div>
                     </div>
             
             `
             cardContainer.appendChild(div)
+            
         })
+        
     })
 }
-
+let count = 0
+const handleGetPostData = (title, view) => {
+  console.log(title, view);
+  const container = document.getElementById('container')
+  const div = document.createElement('div');
+  count++
+  const counter = document.getElementById('count-message')
+  counter.innerText = `${count}`
+  div.classList.add('flex','justify-center','items-center')
+  div.innerHTML = `
+    <h1 class="text-[15px] font-[800]">${title}</h1>
+    <div class='md:ms-48 flex justify-center items-center'>
+      <i class="fa-regular fa-eye"></i>
+      <p class='ms-1 text-[16px]'>${view}</p>
+    </div>
+  `;
+  container.appendChild(div)
+};
 loadDiscussData()

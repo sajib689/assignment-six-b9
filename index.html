@@ -109,9 +109,22 @@
             <div id="card-container" class=" ms-0 md:ms-10">
                 <!-- card append from js file -->
             </div>
-            <div>
-                <!-- Title -->
-                <h1>Daynamic area</h1>
+            <div class="">
+                <!-- data show area -->
+                <div class="flex items-center justify-between">
+                    <div>
+                        <h1 class="text-[20px] font-[700]">Title</h1>
+                    </div>
+                    <div class="ms-4 md:ms-48 flex justify-center items-center">
+                        <i class="fa-solid fa-check text-[#3DCE09]"></i>
+                        <p>Mark as read ( <span id="count-message">0</span> )</p>
+                    </div>
+                </div>
+
+                <!-- data load -->
+                <div id="container" class=" ">
+                    <!-- display the data in js file -->
+                </div>
             </div>
         </div>
     </section>
