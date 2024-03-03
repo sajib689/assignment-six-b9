@@ -92,8 +92,8 @@ const handleGetPostData = (title, view) => {
   counter.innerText = `${count}`
   div.classList.add('flex','justify-center','items-center')
   div.innerHTML = `
-    <h1 class="text-[15px] font-[800]">${title}</h1>
-    <div class='md:ms-48 flex justify-center items-center'>
+    <h1 class="text-[15px] font-[800] md:me-28">${title}</h1>
+    <div class=' flex justify-between items-center'>
       <i class="fa-regular fa-eye"></i>
       <p class='ms-1 text-[16px]'>${view}</p>
     </div>
