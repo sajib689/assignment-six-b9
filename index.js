@@ -18,6 +18,7 @@ const loadDiscussData = (category = '') => {
     .then((data) => {
       const cardContainer = document.getElementById('card-container')
       cardContainer.textContent = ''
+      
         data.posts.map(post => {
             // console.log(post)
            
@@ -89,7 +90,7 @@ const loadDiscussData = (category = '') => {
 }
 let count = 0
 const handleGetPostData = (title, view) => {
-  console.log(title, view);
+ 
   const container = document.getElementById('container')
   const div = document.createElement('div');
   count++
@@ -98,7 +99,7 @@ const handleGetPostData = (title, view) => {
   div.classList.add('flex','justify-center','items-center')
   div.innerHTML = `
     <h1 class="text-[15px] font-[800] md:me-28">${title}</h1>
-    <div class=' flex justify-between items-center'>
+    <div class=' flex justify-between'>
       <i class="fa-regular fa-eye"></i>
       <p class='ms-1 text-[16px]'>${view}</p>
     </div>
