@@ -1,6 +1,7 @@
 
 
 const loadDiscussData = (category = '') => {
+  toggleLoadingSpinner(true)
   fetch(`https://openapi.programming-hero.com/api/retro-forum/posts${category ? `?category=${category}` : ''}`)
     .then(res => res.json())
     .then((data) => {
@@ -68,6 +69,7 @@ const loadDiscussData = (category = '') => {
         
         
     })
+    toggleLoadingSpinner(false)
 }
 let count = 0
 const handleGetPostData = (title, view) => {
@@ -89,7 +91,22 @@ const handleGetPostData = (title, view) => {
 };
 
 document.getElementById('searchBtn').addEventListener('click', ()=> {
+  toggleLoadingSpinner(true);
   let searchFiled = document.getElementById('input-filed').value
   loadDiscussData(searchFiled)
 })
+
+// loading spinner
+
+const toggleLoadingSpinner = (isLoading) => {
+  const loadingSpinner = document.getElementById('loader')
+  if(isLoading) {
+    loadingSpinner.classList.remove('hidden')
+  } else {
+    setTimeout(() => {
+      loadingSpinner.classList.add('hidden');
+  }, 2000);
+  }
+  
+}
 loadDiscussData()
