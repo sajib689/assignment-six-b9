@@ -8,20 +8,20 @@ const loadDiscussData = () => {
             console.log(post)
             const cardContainer = document.getElementById('card-container')
             const div = document.createElement('div')
-            div.classList.add('card', 'card-side', 'bg-base-100', 'shadow-xl');
+            div.classList.add('mt-5','card', 'card-side', 'bg-base-100', 'shadow-xl');
             div.innerHTML = `
             
             <div>
             ${post.isActive === true ? 
             '<div class="avatar online placeholder">'+
-            '<div class="bg-neutral text-neutral-content rounded-full w-16">'+
+            '<div class="bg-neutral text-neutral-content rounded-xl w-16">'+
             `<img src='${post?.image}'/>`+
             '</div>'+
             '</div> '
             
             :
             '<div class="avatar offline placeholder">'+
-            '<div class="bg-neutral text-neutral-content rounded-full w-16">'+
+            '<div class="bg-neutral text-neutral-content rounded-xl w-16">'+
             `<img src='${post?.image}'/>`+
             '</div>'+
             '</div>' 
