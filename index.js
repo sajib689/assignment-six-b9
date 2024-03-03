@@ -1,4 +1,15 @@
+// loading spinner
 
+const toggleLoadingSpinner = (isLoading) => {
+  const loadingSpinner = document.getElementById('loader');
+  if (isLoading) {
+    loadingSpinner.classList.remove('hidden');
+  } else {
+    setTimeout(() => {
+      loadingSpinner.classList.add('hidden');
+    }, 2000);
+  }
+};
 
 const loadDiscussData = (category = '') => {
   toggleLoadingSpinner(true)
@@ -90,23 +101,51 @@ const handleGetPostData = (title, view) => {
   container.appendChild(div)
 };
 
-document.getElementById('searchBtn').addEventListener('click', ()=> {
+document.getElementById('searchBtn').addEventListener('click', (e)=> {
   toggleLoadingSpinner(true);
+  e.preventDefault();
   let searchFiled = document.getElementById('input-filed').value
   loadDiscussData(searchFiled)
 })
 
-// loading spinner
+// load latest data
 
-const toggleLoadingSpinner = (isLoading) => {
-  const loadingSpinner = document.getElementById('loader')
-  if(isLoading) {
-    loadingSpinner.classList.remove('hidden')
-  } else {
-    setTimeout(() => {
-      loadingSpinner.classList.add('hidden');
-  }, 2000);
-  }
-  
+const loadLatestData = () => {
+  fetch(`https://openapi.programming-hero.com/api/retro-forum/latest-posts`)
+  .then(res => res.json())
+  .then(data => displayLatestData(data))
 }
+const displayLatestData= (news) => {
+  const newsContainer = document.getElementById('newsContainer')
+  news.map(newsItem => {
+    // console.log(newsItem)
+    const div = document.createElement('div')
+    div.classList.add('card', 'card-compact', 'w-96', 'bg-base-100', 'shadow-xl')
+    div.innerHTML = `
+    <figure><img src="${newsItem.cover_image}" alt="Shoes" /></figure>
+          <div class="card-body">
+          <p class='text-[#12132D99]'><i class="fa-regular fa-calendar me-1"></i>${newsItem.author.posted_date}</p>
+            <h2 class="card-title text-[#12132D]">${newsItem.title}</h2>
+            <p>${newsItem.description}</p>
+            <div class="card-actions flex justify-start">
+            <div class="avatar">
+            <div class="rounded-full w-12">
+              <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+            </div>
+          </div>
+          <div>
+            <p class='font-bold'>${newsItem.author.name}</p>
+            <p>${newsItem.author?.designation || 'unknown'}</p>
+          </div>
+            </div>
+          </div>
+    `
+    newsContainer.appendChild(div)
+  })
+}
+
+
+
+
 loadDiscussData()
+loadLatestData()
