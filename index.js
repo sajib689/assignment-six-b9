@@ -1,12 +1,14 @@
 
 
-const loadDiscussData = () => {
-    fetch(`https://openapi.programming-hero.com/api/retro-forum/posts`)
+const loadDiscussData = (category = '') => {
+  fetch(`https://openapi.programming-hero.com/api/retro-forum/posts${category ? `?category=${category}` : ''}`)
     .then(res => res.json())
     .then((data) => {
+      const cardContainer = document.getElementById('card-container')
+      cardContainer.textContent = ''
         data.posts.map(post => {
-            console.log(post)
-            const cardContainer = document.getElementById('card-container')
+            // console.log(post)
+           
             const div = document.createElement('div')
             div.classList.add('mt-5','card', 'card-side', 'bg-base-100', 'shadow-xl');
             div.innerHTML = `
@@ -64,6 +66,7 @@ const loadDiscussData = () => {
             
         })
         
+        
     })
 }
 let count = 0
@@ -84,4 +87,9 @@ const handleGetPostData = (title, view) => {
   `;
   container.appendChild(div)
 };
+
+document.getElementById('searchBtn').addEventListener('click', ()=> {
+  let searchFiled = document.getElementById('input-filed').value
+  loadDiscussData(searchFiled)
+})
 loadDiscussData()
