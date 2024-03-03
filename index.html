@@ -32,54 +32,89 @@
 </head>
 <body class="font">
     <!-- header navbar -->
-    <div class="navbar bg-base-100 container mx-auto">
-        <div class="flex-1">
-          <a class="btn btn-ghost text-4xl">SaJib</a>
-        </div>
-        <div>
-            <!-- icon area -->
-            <div class="me-3 md:d-block hidden">
-                <div class="tooltip lg:tooltip tooltip-bottom" data-tip="hello">
-                    <button class="btn rounded-full"><i class="fa-solid fa-house"></i></button>
-                  </div>
-                <div class="tooltip lg:tooltip tooltip-bottom" data-tip="hello">
-                    <button class="btn rounded-full"><i class="fa-solid fa-pencil"></i></button>
-                  </div>
-                <div class="tooltip lg:tooltip tooltip-bottom" data-tip="edit">
-                    <button class="btn rounded-full"><i class="fa-solid fa-user-plus"></i></button>
-                  </div>
-                <div class="tooltip lg:tooltip tooltip-bottom" data-tip="add">
-                    <button class="btn rounded-full"><i class="fa-regular fa-flag"></i></button>
-                  </div>
-            </div>
-            <!-- icon area end-->
-              <div>
-                <button class="btn bg-[#797DFC] rounded-xl text-white">Sign In</button>
-              </div>
-           </div>
-        </div>
-            
-          </div>
-        </div>
+<div class="navbar bg-base-100 container mx-auto">
+  <div class="navbar-start">
+    <div class="dropdown">
+      <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
       </div>
-
+      <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+        <div class="tooltip lg:tooltip tooltip-bottom" data-tip="hello">
+          <button class="btn rounded-full"><i class="fa-solid fa-house"></i></button>
+        </div>
+        
+        <li>
+          <div class="tooltip lg:tooltip tooltip-bottom" data-tip="hello">
+            <button class="btn rounded-full"><i class="fa-solid fa-pencil"></i></button>
+          </div>
+        </li>
+        <li>
+          <div class="tooltip lg:tooltip tooltip-bottom" data-tip="edit">
+            <button class="btn rounded-full"><i class="fa-solid fa-user-plus"></i></button>
+          </div>
+        </li>
+        <li>
+          <div class="tooltip lg:tooltip tooltip-bottom" data-tip="add">
+            <button class="btn rounded-full"><i class="fa-regular fa-flag"></i></button>
+          </div>
+        </li>
+        <li>
+          <button class="btn bg-[#797DFC] rounded-xl text-white">Sign In</button>
+        </li>
+      </ul>
+    </div>
+    <a class="btn btn-ghost text-4xl">SaJib</a>
+  </div>
+  <div class="navbar-end hidden lg:flex">
+    <ul class="menu menu-horizontal px-1">
+      <li>
+        <div class="tooltip lg:tooltip tooltip-bottom" data-tip="home">
+        <button class="btn rounded-full"><i class="fa-solid fa-house"></i></button>
+      </div>
+    </li>
+      <li>
+        <div class="tooltip lg:tooltip tooltip-bottom" data-tip="update">
+          <button class="btn rounded-full"><i class="fa-solid fa-pencil"></i></button>
+        </div>
+      </li>
+      <li>
+        <div class="tooltip lg:tooltip tooltip-bottom" data-tip="edit">
+          <button class="btn rounded-full"><i class="fa-solid fa-user-plus"></i></button>
+        </div>
+      </li>
+      <li>
+        <div class="tooltip lg:tooltip tooltip-bottom" data-tip="add">
+          <button class="btn rounded-full"><i class="fa-regular fa-flag"></i></button>
+        </div>
+      </li>
+      <li>
+        <button class="btn bg-[#797DFC] rounded-xl text-white">Sign In</button>
+      </li>
+    </ul>
+  </div>
+  
+</div>
     <!-- header navbar end -->
     <!-- hero area start -->
 
     <div class="hero bg bg-cover h-[500px] md:h-[80vh] mt-[50px] container mx-auto rounded-2xl" style="background-image: url('./images/bgbanner.png');">
         <div class="hero-content items-center flex-col-reverse lg:flex-row-reverse justify-between">
             <div class="h-[100px] md:w-[250px] w-[210px] md:h-[288px] bg-white p-30 md:p-11 me-[450px] md:me-[0px] rounded-lg">
-                <div class="flex text-[#12132DCC] p-1">
+                <div class="flex text-[#12132DCC] p-1 justify-between">
                     <p>Registered Users</p>
                     <p class="ms-2">01</p>
                 </div>
-                <div class="flex text-[#12132DCC]  p-1">
-                    <p>Registered Users</p>
-                    <p class="ms-2">02</p>
+                <div class="flex text-[#12132DCC]  p-1 justify-between">
+                    <p>Forum</p>
+                    <p class="ms-2">05</p>
                 </div>
-                <div class="flex text-[#12132DCC]  p-1">
-                    <p>Registered Users</p>
-                    <p class="ms-2">03</p>
+                <div class="flex text-[#12132DCC]  p-1 justify-between">
+                    <p>Topics</p>
+                    <p class="ms-2">01</p>
+                </div>
+                <div class="flex text-[#12132DCC]  p-1 justify-between">
+                    <p>Replies</p>
+                    <p class="ms-2">01</p>
                 </div>
             </div>
             <div class="custom-margin">
