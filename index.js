@@ -124,7 +124,6 @@ const loadLatestData = () => {
 const displayLatestData= (news) => {
   const newsContainer = document.getElementById('newsContainer')
   news.map(newsItem => {
-    console.log(newsItem)
     const div = document.createElement('div')
     div.classList.add('card', 'card-compact', 'w-96', 'bg-base-100', 'shadow-xl')
     div.innerHTML = `
