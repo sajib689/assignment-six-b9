@@ -96,7 +96,7 @@ const handleGetPostData = (title, view) => {
   count++
   const counter = document.getElementById('count-message')
   counter.innerText = `${count}`
-  div.classList.add('flex','mb-3','bg-white','p-3', 'rounded-lg','justify-center','items-center')
+  div.classList.add('ms-4','w-[300px]','md:w-[415px]','flex','mb-3','bg-white','p-3', 'rounded-lg','justify-center','items-center')
   div.innerHTML = `
     <h1 class="text-[15px] font-[800] md:me-28">${title}</h1>
     <div class=' flex justify-between'>
